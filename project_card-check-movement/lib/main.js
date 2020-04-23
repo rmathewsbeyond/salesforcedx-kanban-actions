@@ -39,9 +39,9 @@ function run() {
             const octokit = new github.GitHub(myToken);
             const fromColumn = yield octokit.projects.getColumn({
                 column_id: fromColumnId
+            });
             console.log(fromColumn.data.name.toUpperCase());
             console.log(fromColumnName.toUpperCase());
-            });
             if (fromColumn.data.name.toUpperCase() !== fromColumnName.toUpperCase()) {
                 core.debug(`${fromColumnName.toUpperCase()} doesn't match with ${fromColumn.data.name.toUpperCase}`);
                 core.setOutput(OUTPUT_ISMATCH, 'false');
