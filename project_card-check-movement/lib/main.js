@@ -34,6 +34,9 @@ function run() {
             core.debug(`fromColumnName: ${fromColumnName}`);
             core.debug(`toColumnId: ${toColumnId}`);
             core.debug(`toColumnName: ${toColumnName}`);
+            console.log("JS is actually running");
+            console.log(fromColumn.data.name.toUpperCase());
+            console.log(fromColumnName.toUpperCase());
             const myToken = core.getInput(TOKEN);
             const octokit = new github.GitHub(myToken);
             const fromColumn = yield octokit.projects.getColumn({
